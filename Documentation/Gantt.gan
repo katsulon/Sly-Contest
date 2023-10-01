@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-09-08" view-index="0" gantt-divider-location="398" resource-divider-location="300" version="3.2.3247" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-10-07" view-index="0" gantt-divider-location="398" resource-divider-location="300" version="3.2.3247" locale="fr_FR">
     <description/>
     <view zooming-state="default:0" id="gantt-chart">
         <field id="tpd3" name="Nom" width="198" order="0"/>
@@ -57,49 +57,85 @@
         <task id="11" name="Conception" color="#8cb6ce" meeting="false" start="2023-10-04" duration="6" complete="0" thirdDate="2023-10-02" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         <task id="5" name="Rendu conception" color="#8cb6ce" meeting="false" start="2023-10-09" duration="1" complete="0" thirdDate="2023-10-08" thirdDate-constraint="0" expand="true"/>
         <task id="13" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-10" duration="1" complete="0" thirdDate="2023-10-03" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="57" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-11" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="56" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-16" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="55" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-17" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="54" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-18" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="53" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-23" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="52" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-24" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="51" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-25" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="50" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-30" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="49" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-31" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="48" name="Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-01" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="58" name="Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-06" duration="1" complete="0" thirdDate="2023-11-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="73" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-07" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="72" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-08" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="71" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-13" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="70" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-14" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="69" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-15" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="68" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-20" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="67" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-21" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="66" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-22" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="65" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-27" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="64" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-28" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="63" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-29" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="62" name="Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-04" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="81" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-05" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="80" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-06" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="79" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-11" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="78" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-12" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="77" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-13" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="76" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-18" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="75" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-19" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="74" name="Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-20" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="82" name="Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-25" duration="1" complete="0" thirdDate="2023-12-20" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="83" name="Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-26" duration="1" complete="0" thirdDate="2023-12-25" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="85" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-27" duration="6" complete="0" thirdDate="2023-12-26" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="84" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-01" duration="1" complete="0" thirdDate="2023-12-26" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="91" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-02" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="90" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-03" duration="6" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="89" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-08" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="88" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-09" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="87" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-10" duration="6" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="86" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-15" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="92" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-16" duration="1" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
-        <task id="93" name="Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Copie_Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-17" duration="6" complete="0" thirdDate="2024-01-16" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="57" name="Système plateformer" color="#8cb6ce" meeting="false" start="2023-10-11" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Ajout de la physique et des contrôles de base.]]>
+            </notes>
+        </task>
+        <task id="56" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-10-16" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="55" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-17" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="54" name="Système de grille" color="#8cb6ce" meeting="false" start="2023-10-18" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="53" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-10-23" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="52" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-24" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="51" name="Items et UI" color="#8cb6ce" meeting="false" start="2023-10-25" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="50" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-10-30" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="49" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-10-31" duration="1" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="48" name="Maps" color="#8cb6ce" meeting="false" start="2023-11-01" duration="6" complete="0" thirdDate="2023-10-10" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Maps aléatoire - Forme de map à définir]]>
+            </notes>
+        </task>
+        <task id="58" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-11-06" duration="1" complete="0" thirdDate="2023-11-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="73" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-07" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="72" name="Sauvegardes" color="#8cb6ce" meeting="false" start="2023-11-08" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Sauvegarde des maps créées]]>
+            </notes>
+        </task>
+        <task id="71" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-11-13" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="70" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-14" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="69" name="Mise en place du multijoueur" color="#8cb6ce" meeting="false" start="2023-11-15" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Mise en place du système multijoueur]]>
+            </notes>
+        </task>
+        <task id="68" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-11-20" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="67" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-21" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="66" name="Mise en place du multijoueur" color="#8cb6ce" meeting="false" start="2023-11-22" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Mise en place du système multijoueur]]>
+            </notes>
+        </task>
+        <task id="65" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-11-27" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="64" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-11-28" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="63" name="Mise en place du multijoueur &amp; loop de jeu" color="#8cb6ce" meeting="false" start="2023-11-29" duration="6" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Mise en place du système multijoueur et de la routine de jeu (mode créatif)]]>
+            </notes>
+        </task>
+        <task id="62" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-12-04" duration="1" complete="0" thirdDate="2023-11-06" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="81" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-05" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="80" name="Mise en place du multijoueur &amp; loop de jeu" color="#8cb6ce" meeting="false" start="2023-12-06" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Mise en place du système multijoueur et de la routine de jeu (mode créatif)]]>
+            </notes>
+        </task>
+        <task id="79" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-12-11" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="78" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-12" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="77" name="Mise en place du mode Random" color="#8cb6ce" meeting="false" start="2023-12-13" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="76" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-12-18" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="75" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-19" duration="1" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="74" name="Mise en place du mode Boutique" color="#8cb6ce" meeting="false" start="2023-12-20" duration="6" complete="0" thirdDate="2023-12-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="82" name="Merge du projet" color="#8cb6ce" meeting="false" start="2023-12-25" duration="1" complete="0" thirdDate="2023-12-20" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="83" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2023-12-26" duration="1" complete="0" thirdDate="2023-12-25" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="85" name="Sons et visuels" color="#8cb6ce" meeting="false" start="2023-12-27" duration="6" complete="0" thirdDate="2023-12-26" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="84" name="Merge du projet" color="#8cb6ce" meeting="false" start="2024-01-01" duration="1" complete="0" thirdDate="2023-12-26" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="91" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-02" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="90" name="Menus" color="#8cb6ce" meeting="false" start="2024-01-03" duration="6" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="89" name="Merge du projet" color="#8cb6ce" meeting="false" start="2024-01-08" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="88" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-09" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="87" name="Imprévus" color="#8cb6ce" meeting="false" start="2024-01-10" duration="6" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Cette semaine est une semaine dédiée aux différents imprévus qui pourraient surevenir tout au long du projet.]]>
+            </notes>
+        </task>
+        <task id="86" name="Merge du projet" color="#8cb6ce" meeting="false" start="2024-01-15" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="92" name="Réunion d'équipe" color="#8cb6ce" meeting="false" start="2024-01-16" duration="1" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
+        <task id="93" name="Imprévus" color="#8cb6ce" meeting="false" start="2024-01-17" duration="6" complete="0" thirdDate="2024-01-16" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
+            <notes>
+                <![CDATA[Cette semaine est une semaine dédiée aux différents imprévus qui pourraient surevenir tout au long du projet.]]>
+            </notes>
+        </task>
         <task id="6" name="Rendu final du projet" color="#8cb6ce" meeting="false" start="2024-01-22" duration="1" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
         <task id="7" name="Présentation du projet" color="#8cb6ce" meeting="false" start="2024-01-23" duration="1" complete="0" thirdDate="2024-01-23" thirdDate-constraint="0" expand="true"/>
     </tasks>
