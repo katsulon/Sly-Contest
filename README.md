@@ -8,9 +8,9 @@
 
 ## Analyse
 
-* [Cahier des charges]()
-* [Spécifications détaillées]()
-* [Planning Gantt]()
+* [Cahier des charges](https://gitlab-etu.ing.he-arc.ch/isc/2023-24/niveau-2/2281.1-projet-p2-sa-il/groupe-6-sly-contest/-/wikis/cahier-des-charges)
+* [Spécifications détaillées](https://gitlab-etu.ing.he-arc.ch/isc/2023-24/niveau-2/2281.1-projet-p2-sa-il/groupe-6-sly-contest/-/wikis/Sp%C3%A9cifications-d%C3%A9taill%C3%A9es)
+* [Planning Gantt](https://gitlab-etu.ing.he-arc.ch/isc/2023-24/niveau-2/2281.1-projet-p2-sa-il/groupe-6-sly-contest/-/wikis/gantt)
 
 ## Conception
 
