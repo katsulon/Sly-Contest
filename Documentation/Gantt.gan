@@ -7,8 +7,8 @@
         <option id="filter.completedTasks" value="false"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="210" order="0"/>
-        <field id="1" name="Default role" width="86" order="1"/>
+        <field id="0" name="Name" width="199" order="0"/>
+        <field id="1" name="Default role" width="82" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -100,11 +100,7 @@
                 <![CDATA[Réunions hébdomadères, merge du projet.]]>
             </notes>
         </task>
-        <task id="93" name="Imprévus" color="#8cb6ce" meeting="false" start="2024-01-17" duration="6" complete="0" thirdDate="2024-01-16" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true">
-            <notes>
-                <![CDATA[Cette semaine est une semaine dédiée aux différents imprévus qui pourraient surevenir tout au long du projet.]]>
-            </notes>
-        </task>
+        <task id="93" name="Préparation de la présentation" color="#8cb6ce" meeting="false" start="2024-01-17" duration="6" complete="0" thirdDate="2024-01-16" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="true"/>
         <task id="6" name="Rendu final du projet" color="#8cb6ce" meeting="false" start="2024-01-22" duration="1" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
         <task id="7" name="Présentation du projet" color="#8cb6ce" meeting="false" start="2024-01-23" duration="1" complete="0" thirdDate="2024-01-23" thirdDate-constraint="0" expand="true"/>
     </tasks>
