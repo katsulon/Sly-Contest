@@ -14,8 +14,8 @@
 
 ## Conception
 
-* [Maquettes / Mockups]()
-* [Schéma de classes]()
+* [Maquettes / Mockups](Maquette)
+* [Schéma de classes](uml)
 * [Diagramme de séquences]() *Si pertinent*
 
 ## Réalisation
