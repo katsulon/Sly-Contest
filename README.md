@@ -14,8 +14,8 @@
 
 ## Conception
 
-* [Maquettes / Mockups](Maquette)
-* [Schéma de classes](uml)
+* [Maquettes / Mockups](https://gitlab-etu.ing.he-arc.ch/isc/2023-24/niveau-2/2281.1-projet-p2-sa-il/groupe-6-sly-contest/-/wikis/Maquette)
+* [Schéma de classes](https://gitlab-etu.ing.he-arc.ch/isc/2023-24/niveau-2/2281.1-projet-p2-sa-il/groupe-6-sly-contest/-/wikis/uml)
 * [Diagramme de séquences]() *Si pertinent*
 
 ## Réalisation
