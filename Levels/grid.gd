@@ -15,6 +15,10 @@ func _on_button_2_pressed():
 	queue_redraw()
 	
 func _on_button_3_pressed():
+	draw_grid = true
+	queue_redraw()
+
+func _on_remove_grid_pressed():
 	draw_grid = false
 	queue_redraw()
 

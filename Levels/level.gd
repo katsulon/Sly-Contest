@@ -9,6 +9,8 @@ extends Node2D
 
 var ground_layer = 0
 
+var overlay = 1
+
 var source_id = 0
 
 var button = false
@@ -109,7 +111,7 @@ func _on_button_3_pressed():
 	bloc_coord = Vector2i(99,99)
 
 func _input(event):
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		var mouse_pos = get_global_mouse_position()
 		if (mouse_pos.y <= 512):
 		
@@ -119,7 +121,13 @@ func _input(event):
 				rpc("rpc_erase", ground_layer, tile_map_pos)
 			else:
 				rpc("rpc_place", ground_layer, tile_map_pos, source_id, bloc_coord)
-
+	if event is InputEventMouseMotion:
+		var mouse_pos = get_global_mouse_position()
+		if (mouse_pos.y <= 512):
+			tile_map_pos = tile_map.local_to_map(mouse_pos)
+			tile_map.clear_layer(overlay)
+			tile_map.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
+			
 @rpc("any_peer", "call_local")
 func rpc_erase(layer, pos):
 	tile_map.erase_cell(layer, pos)
