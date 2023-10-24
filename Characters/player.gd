@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tile_map : TileMap = $"../TileMap"
 
 func _physics_process(delta):
-	if (position.y > 257):
+	if (position.y > 512):
 		kill()
 	animated_sprite.play()
 	# Add the gravity.
