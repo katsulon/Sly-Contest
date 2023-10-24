@@ -111,7 +111,6 @@ func _on_button_3_pressed():
 func _input(event):
 	if Input.is_action_just_pressed("click"):
 		var mouse_pos = get_global_mouse_position()
-		
 		if (mouse_pos.y <= 512):
 		
 			tile_map_pos = tile_map.local_to_map(mouse_pos)
