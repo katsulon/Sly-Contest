@@ -4,6 +4,8 @@ extends Node2D
 
 var ground_layer = 0
 
+var source_id = 0
+
 var button = false
 
 var bloc_coord = Vector2i(12,9)
@@ -30,7 +32,6 @@ func _input(event):
 		
 			tile_map_pos = tile_map.local_to_map(mouse_pos)
 			
-			var source_id = 0
 			if (bloc_coord == Vector2i(99,99)):
 				tile_map.erase_cell(ground_layer, tile_map_pos)
 			else:

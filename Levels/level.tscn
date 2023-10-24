@@ -514,7 +514,6 @@ text = "Kill"
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Kill" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/Kill" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Kill" to="Player" method="_on_kill_pressed"]
