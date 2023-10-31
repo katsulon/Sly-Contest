@@ -45,7 +45,8 @@ func _ready():
 		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
 		initBlockGen(start, end)
 	else:
-		await get_tree().create_timer(0.1).timeout
+		while start == Vector2i(0,0):
+			await get_tree().create_timer(0.000001).timeout
 		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
 		initBlockGen(start, end)
 
