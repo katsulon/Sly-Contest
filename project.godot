@@ -21,8 +21,8 @@ GameManager="*res://GameManager.gd"
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=563
+window/size/viewport_width=1008
+window/size/viewport_height=567
 window/stretch/mode="viewport"
 
 [dotnet]
