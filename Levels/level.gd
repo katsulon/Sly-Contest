@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var tile_map = $TileMap
 
+@onready var spawn1 = $"SpawnLocations/0"
+@onready var spawn2 = $"SpawnLocations/1"
+
 @export var PlayerScene : PackedScene
 
 var ground_layer = 0
@@ -32,6 +35,11 @@ func _ready():
 				currentPlayer.global_position = spawn.global_position
 		index += 1
 	pass
+	var startPos = start_finish()
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+		GameManager.Players[multiplayer.get_unique_id()].spawn = startPos
+	else:
+		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(startPos.x + 496, startPos.y)
 
 func blocgen2x2(ULx,ULy,TMx,TMy):
 	tile_map.set_cell(ground_layer, Vector2i(ULx,ULy), source_id, Vector2i(TMx,TMy))

@@ -41,7 +41,7 @@ func SendPlayerInformation(name, id):
 		GameManager.Players[id] = {
 			"name" : name,
 			"id" : id, 
-			"score" : 0
+			"spawn" : 0
 		}
 	if multiplayer.is_server():
 		for i in GameManager.Players:

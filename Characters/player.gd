@@ -10,8 +10,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var tile_map : TileMap = $"../TileMap"
 
-@onready var start_pos : Vector2i
-
 func _physics_process(delta):
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		if (position.y > 512):
@@ -63,7 +61,7 @@ func _physics_process(delta):
 func kill():
 	velocity.x = 0
 	velocity.y = 0
-	position = start_pos
+	position = GameManager.Players[multiplayer.get_unique_id()].spawn
 
 func _on_kill_pressed():
 	kill()
