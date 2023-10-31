@@ -18,11 +18,15 @@ var bloc_coord = Vector2i(12,9)
 var tile_map_pos = Vector2i(0,0)
 
 var x1Min = 1
-var x1Max = 29
+var x1Max = 30
 var yMin = 2
-var yMax = 30
+var yMax = 31
 var x2Min = x1Min + 31
 var x2Max = x1Max + 31
+var padding = 8
+
+var start = Vector2i(0,0)
+var end = Vector2i(0,0)
 
 func _ready():
 	var index = 0
@@ -35,19 +39,23 @@ func _ready():
 				currentPlayer.global_position = spawn.global_position
 		index += 1
 	pass
-	var startPos = start_finish()
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
-		GameManager.Players[multiplayer.get_unique_id()].spawn = startPos
+		start = startBlockCoords(padding)
+		end = finishBlockCoords(start, padding)
+		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
+		initBlockGen(start, end)
 	else:
-		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(startPos.x + 496, startPos.y)
+		await get_tree().create_timer(0.1).timeout
+		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
+		initBlockGen(start, end)
 
-func blocgen2x2(ULx,ULy,TMx,TMy):
+func blockGen2x2(ULx,ULy,TMx,TMy):
 	tile_map.set_cell(ground_layer, Vector2i(ULx,ULy), source_id, Vector2i(TMx,TMy))
 	tile_map.set_cell(ground_layer, Vector2i(ULx+1,ULy), source_id, Vector2i(TMx+2,TMy))
 	tile_map.set_cell(ground_layer, Vector2i(ULx,ULy+1), source_id, Vector2i(TMx,TMy+2))
 	tile_map.set_cell(ground_layer, Vector2i(ULx+1,ULy+1), source_id, Vector2i(TMx+2,TMy+2))
 	
-func finish_coord(coord,padding,min_coord,max_coord,uppergap=0):
+func finishCoords(coord,padding,min_coord,max_coord,uppergap=0):
 	var rand1 = randi_range(min_coord,coord-(2+padding+uppergap))
 	var rand2 = randi_range(coord+(2+padding+uppergap),max_coord)
 	
@@ -60,27 +68,35 @@ func finish_coord(coord,padding,min_coord,max_coord,uppergap=0):
 		return rand1
 	else:
 		return rand2
+
+
+func startBlockCoords(padding):
+	var startx = randi_range(x1Min,x1Max-1)
+	var starty = randi_range(yMin,yMax-1)
 	
-func start_finish():
-	var padding = 8
-	var startx = randi_range(x1Min,x1Max)
-	var starty = randi_range(yMin,yMax)
-	var endx = randi_range(x1Min,x1Max)
-	var endy = randi_range(yMin,yMax)
-	# endx = finish_coord(startx,8,1,29)
-	if endx > startx-(padding+2) && endx < startx+(padding+2):
-		endy = finish_coord(starty,padding,yMin,yMax,2)
+	return Vector2i(startx,starty)
 	
-	blocgen2x2(startx,starty,6,0)
-	blocgen2x2(endx,endy,6,8)
-	blocgen2x2(startx+31,starty,6,0)
-	blocgen2x2(endx+31,endy,6,8)
+func finishBlockCoords(start_block_coords,padding):
+	var endx = randi_range(x1Min,x1Max-1)
+	var endy = randi_range(yMin,yMax-1)
+	if endx > start_block_coords.x-(padding+2) && endx < start_block_coords.x+(padding+2):
+		endy = finishCoords(start_block_coords.y,padding,yMin,yMax-1,2)
+		
+	return Vector2i(endx,endy)
 	
-	var start_pos = Vector2i(startx,starty-1)
+func spawnPos(start_block_coords : Vector2i):
+	var start_pos = start_block_coords
+	start_pos.y -= 1
 	start_pos = tile_map.map_to_local(start_pos)
 	start_pos.x += 8
 	
 	return start_pos
+	
+func initBlockGen(start_block_coords,end_block_coords):
+	blockGen2x2(start_block_coords.x,start_block_coords.y,6,0)
+	blockGen2x2(end_block_coords.x,end_block_coords.y,6,8)
+	blockGen2x2(start_block_coords.x+31,start_block_coords.y,6,0)
+	blockGen2x2(end_block_coords.x+31,end_block_coords.y,6,8)
 
 func _on_button_pressed():
 	bloc_coord = Vector2i(12,9)
