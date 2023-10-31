@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://djliv4h0uw8un"]
+[gd_scene load_steps=8 format=3 uid="uid://djliv4h0uw8un"]
 
 [ext_resource type="Texture2D" uid="uid://3kmkmruwhk5i" path="res://assets/Terrain/Terrain (16x16).png" id="1_n1aru"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_ohocx"]
@@ -83,6 +83,7 @@ texture = ExtResource("1_n1aru")
 7:1/0 = 0
 7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
@@ -457,8 +458,11 @@ custom_data_layer_0/name = "dead"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_7ajcq")
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_a7qin"]
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ohocx")
+PlayerScene = ExtResource("2_grx4m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -101.0
@@ -472,10 +476,7 @@ stretch_mode = 1
 tile_set = SubResource("TileSet_n4ao2")
 format = 2
 layer_0/name = "ground"
-layer_0/tile_data = PackedInt32Array(786432, 393216, 0, 851968, 393216, 1, 917504, 393216, 2, 786433, 458752, 0, 851969, 458752, 1, 917505, 458752, 2, 786434, 458752, 0, 851970, 458752, 1, 917506, 458752, 2, 786435, 458752, 0, 851971, 458752, 1, 917507, 458752, 2, 786436, 458752, 0, 851972, 458752, 1, 917508, 458752, 2, 786437, 458752, 0, 851973, 458752, 1, 917509, 458752, 2, 851974, 458752, 1, 917510, 458752, 2, 786439, 458752, 0, 851975, 458752, 1, 917511, 458752, 2, 786440, 458752, 0, 851976, 458752, 1, 917512, 458752, 2, 786441, 458752, 0, 851977, 458752, 1, 917513, 458752, 2, 786442, 524288, 0, 851978, 524288, 1, 917514, 524288, 2, 786438, 458752, 0)
-
-[node name="Player" parent="." instance=ExtResource("2_grx4m")]
-position = Vector2(34, 32)
+layer_0/tile_data = PackedInt32Array(786432, 393216, 0, 851968, 393216, 1, 917504, 393216, 2, 786433, 458752, 0, 851969, 458752, 1, 917505, 458752, 2, 786434, 458752, 0, 851970, 458752, 1, 917506, 458752, 2, 786435, 458752, 0, 851971, 458752, 1, 917507, 458752, 2, 786436, 458752, 0, 851972, 458752, 1, 917508, 458752, 2, 786437, 458752, 0, 851973, 458752, 1, 917509, 458752, 2, 851974, 458752, 1, 917510, 458752, 2, 786439, 458752, 0, 851975, 458752, 1, 917511, 458752, 2, 786440, 458752, 0, 851976, 458752, 1, 917512, 458752, 2, 786441, 458752, 0, 851977, 458752, 1, 917513, 458752, 2, 786442, 524288, 0, 851978, 524288, 1, 917514, 524288, 2, 786438, 458752, 0, 786491, 524288, 0, 786492, 393216, 0, 786493, 458752, 0, 786488, 524288, 0, 786489, 393216, 0, 786490, 458752, 0, 786485, 524288, 0, 786486, 393216, 0, 786487, 458752, 0, 786483, 393216, 0, 786484, 458752, 0, 852022, 393216, 0, 852023, 458752, 0, 852024, 524288, 0, 852025, 393216, 0, 852026, 458752, 0, 852027, 524288, 0, 852028, 393216, 0, 852029, 458752, 0, 852030, 524288, 0, 786494, 524288, 0, 852019, 393216, 0, 852020, 458752, 0, 852021, 524288, 0, 917555, 393216, 0, 917556, 458752, 0, 917557, 524288, 0, 917558, 393216, 0, 917559, 458752, 0, 917560, 524288, 0, 917561, 393216, 0, 917562, 458752, 0, 917563, 524288, 0, 917564, 393216, 0, 917565, 458752, 0, 917566, 524288, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -511,9 +512,17 @@ offset_bottom = 552.0
 focus_mode = 0
 text = "Kill"
 
+[node name="SpawnLocations" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
+position = Vector2(96, 160)
+
+[node name="1" type="Node2D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
+position = Vector2(888, 160)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_a7qin")
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Kill" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Kill" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Kill" to="Player" method="_on_kill_pressed"]
