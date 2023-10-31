@@ -1,37 +1,33 @@
 extends Node2D
 
-var grid_size = DisplayServer.screen_get_size()
-var cell_size = Vector2(16,16)
-var cells_amount = Vector2(grid_size.x/cell_size.x, grid_size.y/cell_size.y)
+@onready var tile_map : TileMap = $"../TileMap"
+
+var size_half = Vector2i(30,31)
+var grid_size
+#var grid_size = DisplayServer.screen_get_size() #Gets grid size based on the size of the screen
+var cell_size = Vector2i(16,16)
+var cells_amount
 
 var draw_grid = false
 
-func _on_button_pressed():
-	draw_grid = true
-	queue_redraw()
-	
-func _on_button_2_pressed():
-	draw_grid = true
-	queue_redraw()
-	
-func _on_button_3_pressed():
-	draw_grid = true
-	queue_redraw()
+func _ready():
+	grid_size = tile_map.map_to_local(Vector2i(size_half.x, size_half.y))
+	cells_amount = Vector2i(grid_size.x/cell_size.x+1, grid_size.y/cell_size.y+1)
 
-func _on_remove_grid_pressed():
-	draw_grid = false
+func _on_toggle_grid_pressed():
+	draw_grid = !draw_grid
 	queue_redraw()
 
 func _draw():
 	if draw_grid:
-		# Draws horitonzal grid lines
+		# Draws vertical grid lines
 		for i in cells_amount.x:
 			var from = Vector2(i*cell_size.x, 0)
 			var to = Vector2(from.x, grid_size.y)
-			draw_line(from, to, Color.BLACK)
-		
-		# Draws vertical grid lines
-		for i in cells_amount.x:
+			draw_line(from, to, Color(Color.BLACK,0.5))
+
+		# Draws horizontal grid lines
+		for i in cells_amount.y:
 			var from = Vector2(0, cell_size.y*i)
 			var to = Vector2(grid_size.x, from.y)
-			draw_line(from, to, Color.BLACK)
+			draw_line(from, to, Color(Color.BLACK,0.5))
