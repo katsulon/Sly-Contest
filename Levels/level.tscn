@@ -512,42 +512,6 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 520.0
-offset_right = 112.0
-offset_bottom = 552.0
-focus_mode = 0
-text = "Bloc 1"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 128.0
-offset_top = 520.0
-offset_right = 224.0
-offset_bottom = 552.0
-focus_mode = 0
-text = "Bloc 2"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button3" type="Button" parent="CanvasLayer"]
-offset_left = 240.0
-offset_top = 520.0
-offset_right = 336.0
-offset_bottom = 552.0
-focus_mode = 0
-text = "Delete"
-metadata/_edit_use_anchors_ = true
-
-[node name="Kill" type="Button" parent="CanvasLayer"]
-offset_left = 352.0
-offset_top = 520.0
-offset_right = 448.0
-offset_bottom = 552.0
-focus_mode = 0
-text = "Kill"
-metadata/_edit_use_anchors_ = true
-
 [node name="ToggleGrid" type="Button" parent="CanvasLayer"]
 offset_left = 464.0
 offset_top = 520.0
@@ -568,7 +532,4 @@ position = Vector2(856, 600)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_a7qin")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CanvasLayer/ToggleGrid" to="Grid" method="_on_toggle_grid_pressed"]

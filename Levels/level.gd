@@ -4,6 +4,9 @@ extends Node2D
 
 @onready var spawn1 = $"SpawnLocations/0"
 @onready var spawn2 = $"SpawnLocations/1"
+@onready var btn1 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button")
+@onready var btn2 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button2")
+@onready var btn3 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button3")
 
 @export var PlayerScene : PackedScene
 
@@ -33,6 +36,9 @@ var end = Vector2i(0,0)
 
 var erase_text = Vector2i(18,5)
 func _ready():
+	btn1.connect("pressed", _on_button_pressed)
+	btn2.connect("pressed", _on_button_2_pressed)
+	btn3.connect("pressed", _on_button_3_pressed)
 	var index = 0
 	for i in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()
