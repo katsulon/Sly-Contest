@@ -11,15 +11,18 @@ config_version=5
 [application]
 
 config/name="Sly Contest"
-run/main_scene="res://Levels/level.tscn"
+run/main_scene="res://Multiplayer/MultiplayerScene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://GameManager.gd"
+
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=563
-window/size/mode=3
+window/size/viewport_width=1008
+window/size/viewport_height=567
 window/stretch/mode="viewport"
 
 [dotnet]
