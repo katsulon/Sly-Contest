@@ -509,17 +509,10 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Control" parent="." instance=ExtResource("6_uuvyi")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ToggleGrid" type="Button" parent="CanvasLayer"]
-offset_left = 464.0
-offset_top = 520.0
-offset_right = 561.0
-offset_bottom = 551.0
-focus_mode = 0
-text = "Toggle Grid"
-metadata/_edit_use_anchors_ = true
+offset_left = 28.0
+offset_top = 5.0
+offset_right = 28.0
+offset_bottom = 5.0
 
 [node name="SpawnLocations" type="Node2D" parent="."]
 
@@ -531,5 +524,3 @@ position = Vector2(856, 600)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_a7qin")
-
-[connection signal="pressed" from="CanvasLayer/ToggleGrid" to="Grid" method="_on_toggle_grid_pressed"]

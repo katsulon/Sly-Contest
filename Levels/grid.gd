@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tile_map : TileMap = $"../TileMap"
+@onready var btnGrid = get_node("../Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/ToggleGrid")
 
 var size_half = Vector2i(30,31)
 var grid_size
@@ -13,6 +14,7 @@ var draw_grid = false
 func _ready():
 	grid_size = tile_map.map_to_local(Vector2i(size_half.x, size_half.y))
 	cells_amount = Vector2i(grid_size.x/cell_size.x+1, grid_size.y/cell_size.y+1)
+	btnGrid.connect("pressed", _on_toggle_grid_pressed)
 
 func _on_toggle_grid_pressed():
 	draw_grid = !draw_grid
