@@ -1,5 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djliv4h0uw8un"]
-[gd_scene load_steps=8 format=3 uid="uid://djliv4h0uw8un"]
+[gd_scene load_steps=9 format=3 uid="uid://djliv4h0uw8un"]
 
 [ext_resource type="Texture2D" uid="uid://3kmkmruwhk5i" path="res://assets/Terrain/Terrain (16x16).png" id="1_n1aru"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_ohocx"]
@@ -508,9 +507,6 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Grid" type="Node2D" parent="."]
-script = ExtResource("4_q3svo")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -545,6 +541,14 @@ offset_bottom = 552.0
 focus_mode = 0
 text = "Kill"
 
+[node name="ToggleGrid" type="Button" parent="CanvasLayer"]
+offset_left = 464.0
+offset_top = 520.0
+offset_right = 561.0
+offset_bottom = 551.0
+focus_mode = 0
+text = "Toggle Grid"
+
 [node name="SpawnLocations" type="Node2D" parent="."]
 
 [node name="0" type="Node2D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
@@ -556,16 +560,7 @@ position = Vector2(856, 600)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_a7qin")
 
-[node name="ToggleGrid" type="Button" parent="CanvasLayer"]
-offset_left = 464.0
-offset_top = 520.0
-offset_right = 561.0
-offset_bottom = 551.0
-focus_mode = 0
-text = "Toggle Grid"
-
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/Kill" to="Player" method="_on_kill_pressed"]
 [connection signal="pressed" from="CanvasLayer/ToggleGrid" to="Grid" method="_on_toggle_grid_pressed"]
