@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://djliv4h0uw8un"]
+[gd_scene load_steps=10 format=3 uid="uid://djliv4h0uw8un"]
 
 [ext_resource type="Texture2D" uid="uid://3kmkmruwhk5i" path="res://assets/Terrain/Terrain (16x16).png" id="1_n1aru"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_ohocx"]
 [ext_resource type="PackedScene" uid="uid://choxhxujuyq1c" path="res://Characters/player.tscn" id="2_grx4m"]
 [ext_resource type="Texture2D" uid="uid://ys83iboi1ms2" path="res://assets/Background/Brown.png" id="3_52n05"]
 [ext_resource type="Script" path="res://Levels/grid.gd" id="4_q3svo"]
+[ext_resource type="PackedScene" uid="uid://b1weu27roatyo" path="res://Interfaces/UI.tscn" id="6_uuvyi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ajcq"]
 texture = ExtResource("1_n1aru")
@@ -507,6 +508,8 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
+[node name="Control" parent="." instance=ExtResource("6_uuvyi")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -516,6 +519,7 @@ offset_right = 112.0
 offset_bottom = 552.0
 focus_mode = 0
 text = "Bloc 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 128.0
@@ -524,6 +528,7 @@ offset_right = 224.0
 offset_bottom = 552.0
 focus_mode = 0
 text = "Bloc 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="CanvasLayer"]
 offset_left = 240.0
@@ -532,6 +537,7 @@ offset_right = 336.0
 offset_bottom = 552.0
 focus_mode = 0
 text = "Delete"
+metadata/_edit_use_anchors_ = true
 
 [node name="Kill" type="Button" parent="CanvasLayer"]
 offset_left = 352.0
@@ -540,6 +546,7 @@ offset_right = 448.0
 offset_bottom = 552.0
 focus_mode = 0
 text = "Kill"
+metadata/_edit_use_anchors_ = true
 
 [node name="ToggleGrid" type="Button" parent="CanvasLayer"]
 offset_left = 464.0
@@ -548,6 +555,7 @@ offset_right = 561.0
 offset_bottom = 551.0
 focus_mode = 0
 text = "Toggle Grid"
+metadata/_edit_use_anchors_ = true
 
 [node name="SpawnLocations" type="Node2D" parent="."]
 
