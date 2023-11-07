@@ -9,6 +9,10 @@ extends Node2D
 
 var ground_layer = 0
 
+var overlay = 1
+
+var block_active = false
+
 var source_id = 0
 
 var button = false
@@ -16,7 +20,6 @@ var button = false
 var bloc_coord = Vector2i(12,9)
 
 var tile_map_pos = Vector2i(0,0)
-
 var x1Min = 1
 var x1Max = 30
 var yMin = 2
@@ -28,6 +31,7 @@ var padding = 8
 var start = Vector2i(0,0)
 var end = Vector2i(0,0)
 
+var erase_text = Vector2i(18,5)
 func _ready():
 	var index = 0
 	for i in GameManager.Players:
@@ -106,20 +110,27 @@ func _on_button_2_pressed():
 	bloc_coord = Vector2i(17,9)
 	
 func _on_button_3_pressed():
-	bloc_coord = Vector2i(99,99)
+	bloc_coord = erase_text
 
 func _input(event):
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		var mouse_pos = get_global_mouse_position()
-		
 		if (mouse_pos.y <= 512):
-		
 			tile_map_pos = tile_map.local_to_map(mouse_pos)
 			
-			if (bloc_coord == Vector2i(99,99)):
+			if (bloc_coord == erase_text):
 				rpc("rpc_erase", ground_layer, tile_map_pos)
 			else:
 				rpc("rpc_place", ground_layer, tile_map_pos, source_id, bloc_coord)
+	if event is InputEventMouseMotion:
+		var mouse_pos = get_global_mouse_position()
+		if (mouse_pos.y <= 512):
+			tile_map_pos = tile_map.local_to_map(mouse_pos)
+			tile_map.clear_layer(overlay)
+			tile_map.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
+			tile_map.set_layer_modulate(overlay, Color.WHITE)
+			if bloc_coord != erase_text:
+				tile_map.set_layer_modulate(overlay, Color(Color.WHITE, 0.5))
 
 @rpc("any_peer", "call_local")
 func rpc_erase(layer, pos):
