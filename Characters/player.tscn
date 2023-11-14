@@ -236,4 +236,6 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_oftut")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.01
+delta_interval = 0.01
 replication_config = SubResource("SceneReplicationConfig_uwi5s")
