@@ -34,6 +34,8 @@ var padding = 8
 var start = Vector2i(0,0)
 var end = Vector2i(0,0)
 
+var player = load("res://Characters/player.gd")
+
 var erase_text = Vector2i(18,5)
 func _ready():
 	btn1.connect("pressed", _on_button_pressed)
@@ -48,7 +50,7 @@ func _ready():
 			if spawn.name == str(index):
 				currentPlayer.global_position = spawn.global_position
 		index += 1
-	pass
+	
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		start = startBlockCoords(padding)
 		end = finishBlockCoords(start, padding)
@@ -117,7 +119,22 @@ func _on_button_2_pressed():
 	
 func _on_button_3_pressed():
 	bloc_coord = erase_text
+	
 
+func _on_button4_pressed():
+	rpc("switchPos")
+		
+@rpc("any_peer", "call_local")			
+func switchPos():
+	
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+			GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
+	else:
+		while start == Vector2i(0,0):
+			await get_tree().create_timer(0.000001).timeout
+		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
+	player.kill()
+	
 func _input(event):
 	if Input.is_action_pressed("click"):
 		var mouse_pos = get_global_mouse_position()
@@ -145,3 +162,5 @@ func rpc_erase(layer, pos):
 @rpc("any_peer", "call_local")
 func rpc_place(layer, pos, id, coord):
 	tile_map.set_cell(layer, pos, id, coord)
+
+

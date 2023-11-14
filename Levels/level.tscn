@@ -524,3 +524,10 @@ position = Vector2(856, 600)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_a7qin")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Switch to 2"
+
+[connection signal="pressed" from="Button" to="." method="_on_button4_pressed"]
