@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var tile_map : TileMap = $"../TileMap"
 @onready var coyote_time = $CoyoteTime
+@onready var jump_buffer = $JumpBuffer
 var wall_jump_remaining
 
 func _physics_process(delta):
@@ -30,6 +31,7 @@ func _physics_process(delta):
 			else:
 				animated_sprite.animation = "run"
 
+		# move_and_slide() is called is_on_floor() is updated but was_on_floor keep the previous value
 		var was_on_floor = is_on_floor()
 		
 		if is_on_floor():
@@ -45,16 +47,7 @@ func _physics_process(delta):
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("ui_left", "ui_right")
 		
-		# Handle Jump.
-		if Input.is_action_just_pressed("ui_accept") and velocity.y >= 0 and ((is_on_floor() or !coyote_time.is_stopped()) or (is_on_wall() and wall_jump_remaining)):
-			var new_speed = 0
-			if is_on_wall():
-				wall_jump_remaining = 1
-				new_speed = SPEED * direction * -2
-			velocity.x = new_speed
-			velocity.y = JUMP_VELOCITY
-		# print(velocity)
-		
+		# Movement
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, acceleration)
 			
@@ -62,9 +55,23 @@ func _physics_process(delta):
 				animated_sprite.flip_h = true
 			elif (velocity.x > 0):
 				animated_sprite.flip_h = false
-			
 		else:
 			velocity.x = move_toward(velocity.x, 0, acceleration)
+		
+		# Handle Jump.
+		if Input.is_action_just_pressed("ui_accept") and velocity.y >= 0:
+			# Jump / Wall-jump
+			if ((is_on_floor() or !coyote_time.is_stopped()) or (is_on_wall() and wall_jump_remaining)):
+				var new_speed = velocity.x
+				coyote_time.stop()
+				if is_on_wall():
+					wall_jump_remaining = 1
+					new_speed = SPEED * direction * -2
+				velocity.x = new_speed
+				velocity.y = JUMP_VELOCITY
+			# Buffers jump if not on floor
+			else:
+				jump_buffer.start()
 			
 		var tile_map_pos = tile_map.local_to_map(Vector2i(position.x, position.y))
 
@@ -80,6 +87,11 @@ func _physics_process(delta):
 		
 		if was_on_floor && !is_on_floor():
 			coyote_time.start()
+		
+		# Jumps if a jump was buffered
+		if is_on_floor() && !jump_buffer.is_stopped():
+			jump_buffer.stop()
+			velocity.y = JUMP_VELOCITY
 
 func kill():
 	velocity.x = 0
