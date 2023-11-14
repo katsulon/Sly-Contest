@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tile_map = $TileMap
+@onready var tile_map_no_collision = $TileMapNoCollision
 
 @onready var spawn1 = $"SpawnLocations/0"
 @onready var spawn2 = $"SpawnLocations/1"
@@ -12,7 +13,7 @@ extends Node2D
 
 var ground_layer = 0
 
-var overlay = 1
+var overlay = 0
 
 var block_active = false
 
@@ -131,12 +132,12 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var mouse_pos = get_global_mouse_position()
 		if (mouse_pos.y <= 512):
-			tile_map_pos = tile_map.local_to_map(mouse_pos)
-			tile_map.clear_layer(overlay)
-			tile_map.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
-			tile_map.set_layer_modulate(overlay, Color.WHITE)
+			tile_map_pos = tile_map_no_collision.local_to_map(mouse_pos)
+			tile_map_no_collision.clear_layer(overlay)
+			tile_map_no_collision.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
+			tile_map_no_collision.set_layer_modulate(overlay, Color.WHITE)
 			if bloc_coord != erase_text:
-				tile_map.set_layer_modulate(overlay, Color(Color.WHITE, 0.5))
+				tile_map_no_collision.set_layer_modulate(overlay, Color(Color.WHITE, 0.5))
 
 @rpc("any_peer", "call_local")
 func rpc_erase(layer, pos):
