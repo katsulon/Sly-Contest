@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://GameManager.gd"
-Items="*res://Items/items.tscn"
 
 [display]
 
