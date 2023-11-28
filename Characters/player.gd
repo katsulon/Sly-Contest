@@ -20,11 +20,17 @@ func _physics_process(delta):
 		animated_sprite.play()
 		# Add the gravity.
 		if not is_on_floor():
-			velocity.y = move_toward(velocity.y, 980, gravity * delta)
+			if is_on_wall():
+				velocity.y = move_toward(velocity.y, 180, gravity * delta)
+			else:
+				velocity.y = move_toward(velocity.y, 980, gravity * delta)
 			if (velocity.y <= 0):
 				animated_sprite.animation = "jump"
 			else:
-				animated_sprite.animation = "fall"
+				if is_on_wall():
+					animated_sprite.animation = "wall_jump"
+				else:
+					animated_sprite.animation = "fall"
 		else:
 			if(velocity.x == 0):
 				animated_sprite.animation = "idle"
@@ -64,7 +70,7 @@ func _physics_process(delta):
 			if ((is_on_floor() or !coyote_time.is_stopped()) or (is_on_wall() and wall_jump_remaining)):
 				var new_speed = velocity.x
 				coyote_time.stop()
-				if is_on_wall():
+				if is_on_wall() && !is_on_floor():
 					wall_jump_remaining = 1
 					new_speed = SPEED * direction * -2
 				velocity.x = new_speed
