@@ -1,0 +1,98 @@
+@startuml
+class Character
+{
+    # x : double
+    # y : double
+    # speed : double
+    # inventory : Inventory
+
+    + restart(): double[]
+
+    + show() : void {query} {virtual}
+    + getPosition() : double[] {query}
+    + setPosition(x : double, y : double) : void
+
+    + move(x : double, y : double, speed : double) : void
+    + jump(x : double, y : double, speed : double) : void
+    + interact(item : Item) : void
+}
+
+class Inventory
+{
+    + items : Item[]
+}
+
+class Item
+{
+    # x : double
+    # y : double
+    # price : int
+    # quality : int
+
+    + show() : void {query} {virtual}
+    + getPosition() : double[] {query}
+    + setPosition(x : double, y : double) : void
+    + PosIsValid(x : double, y : double) : bool
+}
+
+class Trap
+{
+    # damage : bool
+    + rotate() : void
+}
+
+class OnUseItem
+{
+    # available : bool
+    + Use() : void
+}
+
+class Rocket
+{
+    # timer : int
+}
+
+class Spike
+{
+
+}
+
+class Crossbow
+{
+    # clock : int
+    + getClock() : int
+    + setClock(clock : int) : void
+    + shoot() : *Arrow
+}
+
+class Projectile
+{
+    # x : double
+    # y : double
+    # speed : double
+
+    # damage : bool
+
+    + show() : void {query} {virtual}
+    + getPosition() : double[] {query}
+    + setPosition(x : double, y : double) : void
+
+    + move(x : double, y : double, speed : double) : void
+}
+
+class Arrow
+{
+
+}
+
+Item ^-- Trap
+Item ^-- OnUseItem
+OnUseItem ^-- Rocket
+Trap ^-- Spike
+Trap ^-- Crossbow
+Crossbow o-- Arrow
+Projectile ^-- Arrow
+Character *-- Inventory
+Inventory o-- Item
+
+@enduml
