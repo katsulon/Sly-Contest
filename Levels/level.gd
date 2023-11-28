@@ -37,6 +37,8 @@ var end = Vector2i(0,0)
 var player = load("res://Characters/player.gd")
 
 var erase_text = Vector2i(18,5)
+
+var counterSwitch = 0
 func _ready():
 	btn1.connect("pressed", _on_button_pressed)
 	btn2.connect("pressed", _on_button_2_pressed)
@@ -122,18 +124,33 @@ func _on_button_3_pressed():
 	
 
 func _on_button4_pressed():
-	rpc("switchPos")
+	if counterSwitch % 2 == 0:
+		rpc("switchPos1")
+	else : 
+		rpc("switchPos2")
+	counterSwitch += 1	
+	print(counterSwitch)
+	player.kill()
 		
 @rpc("any_peer", "call_local")			
-func switchPos():
-	
+func switchPos1():
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 			GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
 	else:
 		while start == Vector2i(0,0):
 			await get_tree().create_timer(0.000001).timeout
-		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
-	player.kill()
+		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)		
+	
+@rpc("any_peer", "call_local")	
+func switchPos2():
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+			GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
+	else:
+		while start == Vector2i(0,0):
+			await get_tree().create_timer(0.000001).timeout
+		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
+	
+	
 	
 func _input(event):
 	if Input.is_action_pressed("click"):
