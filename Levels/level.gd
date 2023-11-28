@@ -7,7 +7,8 @@ extends Node2D
 @onready var btn1 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button")
 @onready var btn2 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button2")
 @onready var btn3 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button3")
-
+@onready var ui = $Control
+@onready var playTimer = $PlayTimer
 @export var PlayerScene : PackedScene
 
 var ground_layer = 0
@@ -121,15 +122,6 @@ func _on_button_2_pressed():
 	
 func _on_button_3_pressed():
 	bloc_coord = erase_text
-	
-
-func _on_button4_pressed():
-	if counterSwitch % 2 == 0:
-		rpc("switchPos1")
-	else : 
-		rpc("switchPos2")
-	counterSwitch += 1	
-	print(counterSwitch)
 	player.kill()
 		
 @rpc("any_peer", "call_local")			
@@ -140,7 +132,6 @@ func switchPos1():
 		while start == Vector2i(0,0):
 			await get_tree().create_timer(0.000001).timeout
 		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)		
-	
 @rpc("any_peer", "call_local")	
 func switchPos2():
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
@@ -181,3 +172,14 @@ func rpc_place(layer, pos, id, coord):
 	tile_map.set_cell(layer, pos, id, coord)
 
 
+
+
+func _on_round_timer_timeout():
+	rpc("switchPos1")
+	print("Construction done Now play !")
+	playTimer.start()
+	
+
+
+func _on_play_timer_timeout():
+	print("End of the game go to the scoreboard.")
