@@ -7,7 +7,9 @@ extends Node2D
 @onready var btn1 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button")
 @onready var btn2 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button2")
 @onready var btn3 = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button3")
-
+@onready var kill = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Kill")
+@onready var ui = $Control
+@onready var playTimer = $PlayTimer
 @export var PlayerScene : PackedScene
 
 var ground_layer = 0
@@ -34,11 +36,16 @@ var padding = 8
 var start = Vector2i(0,0)
 var end = Vector2i(0,0)
 
+var player
+
 var erase_text = Vector2i(18,5)
+
+var counterSwitch = 0
 func _ready():
 	btn1.connect("pressed", _on_button_pressed)
 	btn2.connect("pressed", _on_button_2_pressed)
 	btn3.connect("pressed", _on_button_3_pressed)
+	kill.connect("pressed", _on_kill_pressed)
 	var index = 0
 	for i in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()
@@ -48,17 +55,20 @@ func _ready():
 			if spawn.name == str(index):
 				currentPlayer.global_position = spawn.global_position
 		index += 1
-	pass
+	
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		start = startBlockCoords(padding)
 		end = finishBlockCoords(start, padding)
 		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
 		initBlockGen(start, end)
+		player = get_node(str(multiplayer.get_unique_id()))
+		print(player)
 	else:
 		while start == Vector2i(0,0):
 			await get_tree().create_timer(0.000001).timeout
 		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
 		initBlockGen(start, end)
+		player = get_node(str(multiplayer.get_unique_id()))
 
 func blockGen2x2(ULx,ULy,TMx,TMy):
 	tile_map.set_cell(ground_layer, Vector2i(ULx,ULy), source_id, Vector2i(TMx,TMy))
@@ -117,7 +127,29 @@ func _on_button_2_pressed():
 	
 func _on_button_3_pressed():
 	bloc_coord = erase_text
-
+	
+func _on_kill_pressed():
+	player.kill()
+		
+@rpc("any_peer", "call_local")			
+func switchPos1():
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+			GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
+	else:
+		while start == Vector2i(0,0):
+			await get_tree().create_timer(0.000001).timeout
+		GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)		
+@rpc("any_peer", "call_local")	
+func switchPos2():
+	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
+			GameManager.Players[multiplayer.get_unique_id()].spawn = spawnPos(start)
+	else:
+		while start == Vector2i(0,0):
+			await get_tree().create_timer(0.000001).timeout
+		GameManager.Players[multiplayer.get_unique_id()].spawn = Vector2i(spawnPos(start).x + 496, spawnPos(start).y)
+	
+	
+	
 func _input(event):
 	if Input.is_action_pressed("click"):
 		var mouse_pos = get_global_mouse_position()
@@ -145,3 +177,12 @@ func rpc_erase(layer, pos):
 @rpc("any_peer", "call_local")
 func rpc_place(layer, pos, id, coord):
 	tile_map.set_cell(layer, pos, id, coord)
+
+func _on_round_timer_timeout():
+	rpc("switchPos1")
+	print("Construction done Now play !")
+	player.kill()
+	playTimer.start()
+	
+func _on_play_timer_timeout():
+	print("End of the game go to the scoreboard.")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1weu27roatyo"]
+[gd_scene load_steps=6 format=3 uid="uid://b1weu27roatyo"]
 
 [ext_resource type="Texture2D" uid="uid://d3iqah6fvbksu" path="res://assets/Terrain/orangeBlock.png" id="1_4txxn"]
 [ext_resource type="Texture2D" uid="uid://b6fnknsjs26n5" path="res://assets/Terrain/goldBlock.png" id="1_82cl6"]
 [ext_resource type="Texture2D" uid="uid://dlmwu282h5rjg" path="res://assets/Terrain/Eraser.png" id="2_ncwb1"]
 [ext_resource type="Texture2D" uid="uid://jo88f471cts0" path="res://assets/Menu/Levels/50.png" id="4_0f8t0"]
+[ext_resource type="Texture2D" uid="uid://ckg4xvc0jc6t8" path="res://assets/Menu/Buttons/Levels.png" id="5_vvs6a"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -56,3 +57,7 @@ icon = ExtResource("2_ncwb1")
 layout_mode = 2
 focus_mode = 0
 icon = ExtResource("4_0f8t0")
+
+[node name="ToggleGrid" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+icon = ExtResource("5_vvs6a")
