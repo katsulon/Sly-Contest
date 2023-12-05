@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Sly Contest"
-run/main_scene="res://Multiplayer/MultiplayerScene.tscn"
+run/main_scene="res://Game/Multiplayer/MultiplayerScene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://GameManager.gd"
+GameManager="*res://Game/GameManager.gd"
 
 [display]
 
