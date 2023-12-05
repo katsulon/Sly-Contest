@@ -100,7 +100,6 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 
 func kill():
-	print("t'es mort")
 	velocity.x = 0
 	velocity.y = 0
 	position = GameManager.Players[multiplayer.get_unique_id()].spawn
