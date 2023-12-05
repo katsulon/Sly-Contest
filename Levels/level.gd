@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tile_map = $TileMap
+@onready var tile_map_no_collision = $TileMapNoCollision
 
 @onready var spawn1 = $"SpawnLocations/0"
 @onready var spawn2 = $"SpawnLocations/1"
@@ -10,12 +11,14 @@ extends Node2D
 @onready var kill = get_node("Control/CanvasLayer/PanelContainer/MarginContainer/GridContainer/Kill")
 @onready var ui = $Control
 @onready var playTimer = $PlayTimer
+#@onready var items = get_node("/root/Items")
+@onready var saw_test = $"Items/Saw"
+
 @export var PlayerScene : PackedScene
 
 var ground_layer = 0
 
-var overlay = 1
-
+var overlay = 0
 var block_active = false
 
 var source_id = 0
@@ -46,6 +49,9 @@ func _ready():
 	btn2.connect("pressed", _on_button_2_pressed)
 	btn3.connect("pressed", _on_button_3_pressed)
 	kill.connect("pressed", _on_kill_pressed)
+	
+	saw_test.set_global_position(Vector2i(200,200))
+	
 	var index = 0
 	for i in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()
@@ -160,15 +166,18 @@ func _input(event):
 				rpc("rpc_erase", ground_layer, tile_map_pos)
 			else:
 				rpc("rpc_place", ground_layer, tile_map_pos, source_id, bloc_coord)
+				
 	if event is InputEventMouseMotion:
 		var mouse_pos = get_global_mouse_position()
 		if (mouse_pos.y <= 512):
-			tile_map_pos = tile_map.local_to_map(mouse_pos)
-			tile_map.clear_layer(overlay)
-			tile_map.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
-			tile_map.set_layer_modulate(overlay, Color.WHITE)
+			tile_map_pos = tile_map_no_collision.local_to_map(mouse_pos)
+			tile_map_no_collision.clear_layer(overlay)
+			tile_map_no_collision.set_cell(overlay, tile_map_pos, source_id, bloc_coord)
+			tile_map_no_collision.set_layer_modulate(overlay, Color.WHITE)
 			if bloc_coord != erase_text:
-				tile_map.set_layer_modulate(overlay, Color(Color.WHITE, 0.5))
+				tile_map_no_collision.set_layer_modulate(overlay, Color(Color.WHITE, 0.5))
+			
+			
 
 @rpc("any_peer", "call_local")
 func rpc_erase(layer, pos):
