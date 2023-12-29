@@ -17,9 +17,9 @@ var peer = WebSocketMultiplayerPeer.new()
 
 var id = 0
  
-# var ip = "sly.uglu.ch" # prod ip
+var ip = "sly.uglu.ch" # prod ip
 
-var ip = "127.0.0.1" # dev ip
+# var ip = "127.0.0.1" # dev ip
 
 var rtcPeer : WebRTCMultiplayerPeer = WebRTCMultiplayerPeer.new()
 
